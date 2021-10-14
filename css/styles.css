@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  position: relative;
+  min-height: 100%;
+  height: 100%;
+  font-size: 18px;
+  font-family: "Kumbh Sans", sans-serif;
+  background: var(--dark-cyan);
+  z-index: 0;
+}
+
+body:before {
+  position: absolute;
+  content: "";
+  height: 60%;
+  width: 130%;
+  background: url("../img/bg-pattern-top.svg") no-repeat center center/cover;
+  z-index: 1;
+  top: -250px;
+  left: -300px;
+}
+
+body:after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: url("../img/bg-pattern-bottom.svg");
+  z-index: 1;
+  bottom: -400px;
+  right: -150px;
+}
+
+:root {
+  --dark-cyan: hsl(185, 75%, 39%);
+  --very-dark-blue: hsl(229, 23%, 23%);
+  --dark-grayish-blue: hsl(227, 10%, 46%);
+  --dark-gray: hsl(0, 0%, 59%);
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  margin: auto;
+  width: 85%;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  position: relative;
+  height: auto;
+  width: 100%;
+  flex: 0 0 100%;
+  border-radius: 15px;
+  z-index: 2;
+}
+
+.card:before {
+  position: absolute;
+  background: url("../img/bg-pattern-card.svg");
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: -125px;
+  border-radius: 15px 15px 0 0;
+  z-index: -1;
+}
+
+.card__profile--img img {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  top: -50px;
+  left: 50%;
+  margin-left: -50px;
+}
+
+.card__profile--img img {
+  border-radius: 50%;
+}
+
+.card__desc {
+  padding-top: 4rem;
+  text-align: center;
+  border-bottom: 1px solid var(--dark-gray);
+}
+
+.card__desc--name {
+  margin-bottom: 0.5rem;
+}
+
+.card__desc--age {
+  margin-left: 0.75rem;
+  font-weight: 400;
+}
+
+.card__desc--location {
+  margin-bottom: 1.75rem;
+}
+
+.card__desc,
+.card__stats {
+  background: #fff;
+}
+
+.card__stats {
+  text-align: center;
+  display: flex;
+  padding: 1.5rem 1rem;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 0 0 15px 15px;
+}
+
+.card__stats--box-desc {
+  font-weight: 400;
+  margin-top: 0.335rem;
+  font-size: 0.8rem;
+}
+
+@media screen and (min-width: 1440px) {
+  body:before {
+    width: 100%;
+    height: 150%;
+    left: -600px;
+    top: -900px;
+  }
+
+  body:after {
+    width: 90%;
+    height: 150%;
+    bottom: -900px;
+    right: -500px;
+    background: url("../img/bg-pattern-bottom.svg") no-repeat center
+      center/cover;
+  }
+
+  .card {
+    max-width: 35%;
+  }
+}
